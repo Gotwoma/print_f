@@ -17,17 +17,14 @@ int _printf(const char *format, ...)
 	{
 		if (*c == '%')
 	{
-	/*Handle conversion specifiers*/
 		switch (*(++c))
 		{
 			case 'c':
-				/* Print a character */
 				putchar(va_arg(args, int));
 				count++;
 				break;
 			case 's':
 				{
-					/* Print a string */
 					const char *str = va_arg(args, const char *);
 
 					while (*str != '\0')
@@ -38,27 +35,20 @@ int _printf(const char *format, ...)
 					break;
 				}
 			case '%':
-				/* Print a percent sign */
 				putchar('%');
 				count++;
-				break;
-			default:
-				/* Unsupported conversion specifier, ignore it*/
 				break;
 		}
 	}
 		else
 		{
-			/* Print regular characters*/
 			putchar(*c);
 			count++;
 		}
 	}
 	va_end(args);
-
 	return (count);
 }
-
 /**
  * main - entry point
  *

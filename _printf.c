@@ -49,15 +49,3 @@ int _printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
-/**
- * main - entry point
- *
- * Return: 0
- */
-int main(void)
-{
-	int count = _printf("%s character is %c and %% is percent.\n", "Jo", 'A');
-
-	printf("\nNo of characters printed: %d\n", count);
-	return (0);
-}
